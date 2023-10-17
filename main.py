@@ -5,6 +5,13 @@ import sqlite3
 connection = sqlite3.connect('sample')
 cursor = connection.cursor()
 
-cursor.execute("SELECT * FROM roundtable WHERE knight = 'arthur'")
+# Selecting all rows
+cursor.execute("SELECT * FROM roundtable")
 result = cursor.fetchall()
 print(result)
+
+# Selecting with specific values
+cursor.execute("SELECT * FROM roundtable WHERE knight = 'lancelot'")
+result = cursor.fetchall()
+print(result)
+
